@@ -31,7 +31,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	kc_tab , kc_q   , kc_w   , kc_e , kc_r  , kc_t  , kc_y  , kc_u , kc_i   , kc_o   , kc_p   ,
 	kc_caps, kc_a   , kc_s   , kc_d , kc_f  , kc_g  , kc_h  , kc_j , kc_k   , kc_l   , kc_bspc,
 	kc_lsft, kc_z   , kc_x   , kc_c , kc_v  , kc_b  , kc_n  , kc_m , kc_slsh, kc_rsft, kc_ent ,
-	kc_lctl, kc_lgui, kc_lalt, mo(1), kc_spc, kc_spc, kc_spc, mo(2), kc_comm, kc_dot , kc_rctl
+	kc_lctl, kc_lgui, kc_lalt,OSL(1), kc_spc, kc_spc, kc_spc,OSL(2), kc_comm, kc_dot , kc_rctl
     ),
 	
 	[1] = LAYOUT(
@@ -39,20 +39,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	kc_trns, kc_f11 , kc_f12 , kc_f13 , kc_f14 , kc_f15 , kc_trns, kc_trns, kc_trns, kc_trns, kc_trns,
 	kc_trns, kc_trns, kc_trns, kc_trns, kc_trns, kc_trns, kc_trns, kc_trns, kc_trns, kc_trns, kc_trns,
 	kc_trns, kc_trns, kc_trns, kc_trns, kc_trns, kc_trns, kc_trns, kc_trns, kc_trns, kc_trns, kc_trns,
+	kc_trns, kc_trns, kc_trns, kc_trns, kc_trns, kc_trns, kc_trns, kc_trns, kc_trns, kc_trns, kc_trns
+	
+	),
+	[2] = LAYOUT(
+	
+	RESET  , kc_trns, kc_trns, kc_trns, kc_trns, kc_trns, kc_trns, kc_trns, kc_trns, kc_trns, kc_trns,
+	kc_trns, kc_trns, kc_trns, kc_trns, kc_trns, kc_trns, kc_trns, kc_trns, kc_LBRC, kc_RBRC, kc_trns,
+	kc_trns, kc_trns, kc_trns, kc_trns, kc_trns, kc_trns, kc_trns, kc_trns, kc_SCLN, kc_RCLN, kc_trns,
 	kc_trns, kc_trns, kc_trns, kc_trns, kc_trns, kc_trns, kc_trns, kc_trns, kc_trns, kc_trns, kc_trns,
+	kc_trns, kc_trns, kc_trns, kc_trns, kc_trns, kc_trns, kc_trns, kc_trns, kc_trns, kc_trns, kc_trns
 	
 	)
 };
-
-void encoder_update_user(uint8_t index, bool clockwise) {
-  if (index == 0) { /* First encoder */
-    if (clockwise) {
-      tap_code(KC_VOLU);
-    } else {
-      tap_code(KC_VOLD);
-    }
-  }
-}
 
 
 /*
