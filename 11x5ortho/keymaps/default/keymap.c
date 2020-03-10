@@ -15,13 +15,35 @@
  */
 #include QMK_KEYBOARD_H
 
-// Defines names for use in layer keycodes and the keymap
 
-// Defines the keycodes used by our macros in process_record_user
-enum custom_keycodes {
-    QMKBEST = SAFE_RANGE,
-    QMKURL
+void matrix_init_user(void) {
+    set_unicode_input_mode(UC_WINC); // REPLACE UC_XXXX with the Unicode Input Mode for your OS. See table below.
 };
+
+
+#define MY_AE XP(LC_AE, UC_AE)
+#define MY_OE XP(LC_OE, UC_OE)
+#define MY_AA XP(LC_AA, UC_AA)
+
+// Unicode Map
+enum unicode_names {
+    UC_AE,
+    LC_AE,
+    UC_OE,
+    LC_OE,
+    UC_AA,
+    LC_AA
+};
+
+const uint32_t PROGMEM unicode_map[] = {
+    [UC_AE] = 0x00C6,
+    [LC_AE] = 0x00E6,
+    [UC_OE] = 0x00D8,
+    [LC_OE] = 0x00F8,
+    [UC_AA] = 0x00C5,
+    [LC_AA] = 0x00E5
+};
+
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* Base */
